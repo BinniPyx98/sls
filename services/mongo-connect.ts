@@ -12,7 +12,7 @@ async function connect() {
     } else {
       // @ts-ignore
       mongoose.connect(getEnv('MONGO_URL'));
-      const dbConnection = mongoose.connection;
+       dbConnection = mongoose.connection;
       dbConnection.on('error', (error) => {
         log(error);
         reject(error);
