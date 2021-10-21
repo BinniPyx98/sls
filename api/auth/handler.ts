@@ -18,10 +18,6 @@ export const registration: Handler<APIGatewayLambdaEvent<null>, any> = async (ev
   connect();
   const authData = event.body;
   await manager.tryRegistration(authData!);
-
-  return {
-    status: 200,
-  };
 };
 export const authorization: Handler<APIGatewayLambdaEvent<string>, any> = async (event) => {
   log(event);
